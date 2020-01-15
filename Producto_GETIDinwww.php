@@ -13,16 +13,18 @@
                     'respuesta'=>'200',
                     'estado' => 'Se obtuvieron los datos correctamente',
                     'data'=>$respuesta,
-                    'error'=>''));
+                    'error'=>''
+                ));
              }else{
                 echo json_encode(array(
                     'respuesta'=>'100',
                     'estado' => 'No existe',
                     //'data'=>$respuesta,
-                    'error'=>''));
+                    'error'=>''
+                ));
              }
 			
-			));
+			
 		}catch(PDOException $e){
 			echo json_encode(
 				array(
