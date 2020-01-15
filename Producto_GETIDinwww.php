@@ -5,7 +5,7 @@
 		try{
 			$codigo = $_GET['codigo']; // obtener parametros GET
 			//$respuesta = SQLGlobal::query("QUERY");//sin filtro ("No incluir filtros ni '?'")
-            $respuesta = SQLGlobal::selectObjectFiltro("select from bd2 WHERE id=?",
+            $respuesta = SQLGlobal::selectObjectFiltro("select * from bd2 WHERE id=?",
             	array($codigo)
              );//con filtro ("El tamaño del array debe ser igual a la cantidad de los '?'")
              if($respuesta){

@@ -5,7 +5,7 @@
 		try{
 			//$id = $_GET['id']; // obtener parametros GET
 			//$respuesta = SQLGlobal::query("QUERY");//sin filtro ("No incluir filtros ni '?'")
-            $respuesta = SQLGlobal::selectObject("select from bd2 WHERE id=2");
+            $respuesta = SQLGlobal::selectObject("select * from bd2 WHERE id=2");
             //	array("element1","element2","...")
 			//con filtro ("El tamaño del array debe ser igual a la cantidad de los '?'")
 			echo json_encode(array(
