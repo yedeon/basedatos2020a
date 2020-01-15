@@ -11,20 +11,20 @@
             $categoria = $datos["categoria"];
 			//$respuesta = SQLGlobal::query("QUERY");//sin filtro ("No incluir filtros ni '?'")
 			$respuesta = SQLGlobal::cudFiltro(
-				"insert into bd2 values(?,?,?,?)",
-				array($id,$descripcion,$precio,$categoria)
+				"UPDATE bd2 SET descripcion =?,precio=?,categoria=? WHERE id=?",
+				array($descripcion,$precio,$categoria,$id) //*  ojo con orden
 			);//con filtro ("El tamaño del array debe ser igual a la cantidad de los '?'")
             if($respuesta>0){
                 echo json_encode(array(
                     'respuesta'=>'200',
-                    'estado' => 'Se inserto ok',
-                    'data'=>'Nro registros afectados son: '.$respuesta,
+                    'estado' => 'Se actualizo ok',
+                    'data'=>'Nro registros afectados son: '.$respuesta, //. concatea en php // en +
                     'error'=>''
                 ));
             }else{
                 echo json_encode(array(
                     'respuesta'=>'100',
-                    'estado' => 'No se registro',
+                    'estado' => 'No se actualizo',
                     'data'=>'Nro registros afectados son: '.$respuesta,
                     'error'=>''
                 ));
