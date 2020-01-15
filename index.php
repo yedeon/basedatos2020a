@@ -1,5 +1,4 @@
-<?php
-  echo "Nuevo Cambios";
-  echo "";
-  //producto_Getall.php;
-?>
+<?php 
+        //echo "index php";
+        require_once("index.html")
+        ?>
