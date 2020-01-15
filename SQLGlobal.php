@@ -1,4 +1,4 @@
-<?php
+<?php        // la guia o base de las consultas
 	require 'Database.php';
 
 	class SQLGlobal{
