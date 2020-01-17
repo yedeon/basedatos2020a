@@ -8,7 +8,7 @@
 				'respuesta'=>'200',
 				'estado' => 'Se obtuvieron los datos correctamente',
 				'data'=>$respuesta,
-				'error'=>''
+				'error'=>'5000'
 			)
 			//echo "logeado okss";
 			);
