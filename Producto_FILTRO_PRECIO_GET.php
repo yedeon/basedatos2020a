@@ -6,7 +6,7 @@
 			$precio = $_GET['precio'];                      // obtener parametros GET confiltro
 			//$respuesta = SQLGlobal::query("QUERY");//sin filtro ("No incluir filtros ni '?'")
 			$respuesta = SQLGlobal::selectArrayFiltro(             // confiltro
-                "select * from bd2 WHERE precio > ? ",     //confiltro      cambio bd y columna y> 
+                "select * from bd2 WHERE precio = ? ",     //confiltro      cambio bd y columna y> 
                             // queda asi en wwww         https://basedatos2020a.herokuapp.com/Producto_FILTRO_PRECIO.php?precio=1.9
 				array($precio)           //confiltro  $precio
 			);//con filtro ("El tamaño del array debe ser igual a la cantidad de los '?'")
