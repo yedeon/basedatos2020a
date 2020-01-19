@@ -11,7 +11,7 @@
             $categoria = $datos["categoria"];
 			//$respuesta = SQLGlobal::query("QUERY");//sin filtro ("No incluir filtros ni '?'")
 			$respuesta = SQLGlobal::cudFiltro(
-				"insert into bd2 values(?,?,?,?)",
+				"INSERT INTO bd2 values(?,?,?,?)",
 				array($id,$descripcion,$precio,$categoria)
 			);//con filtro ("El tamaño del array debe ser igual a la cantidad de los '?'")
             if($respuesta>0){
