@@ -5,14 +5,14 @@
 		try{
 			$datos = json_decode(file_get_contents("php://input"),true);
 
-            $id = $datos["id"]; // obtener parametros POST
+           // $id = $datos["id"]; // obtener parametros POST
             $descripcion = $datos["descripcion"];
             $precio = $datos["precio"];
             $categoria = $datos["categoria"];
 			//$respuesta = SQLGlobal::query("QUERY");//sin filtro ("No incluir filtros ni '?'")
 			$respuesta = SQLGlobal::cudFiltro(
-				"INSERT INTO bd2 values(?,?,?,?)",
-				array($id,$descripcion,$precio,$categoria)
+				"INSERT INTO bd2 values(?,?,?)",
+				array($descripcion,$precio,$categoria)
 			);//con filtro ("El tamaño del array debe ser igual a la cantidad de los '?'")
             if($respuesta>0){
                 echo json_encode(array(
