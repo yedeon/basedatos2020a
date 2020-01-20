@@ -6,13 +6,13 @@
 			$datos = json_decode(file_get_contents("php://input"),true);
 
             $id = $datos["id"]; // obtener parametros POST
-			$respuesta = SQLGlobal::cudFiltro("SELECT * FROM bd2  WHERE id=?",
+			$respuesta = SQLGlobal::selectArrayFiltro("SELECT * FROM bd2  WHERE id=?",
 				array($id) 
 			);//con filtro ("El tamaño del array debe ser igual a la cantidad de los '?'")
             if($respuesta>0){
                 echo json_encode(array(
                     'respuesta'=>'200',
-                    'estado' => 'Se Elimino ok',
+                    'estado' => 'Se Filtro ok',
                     'data'=>'Nro registros afectados son: '.$respuesta, //. concatea en php // en +
                     'error'=>''
                 ));
