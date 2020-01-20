@@ -1,8 +1,8 @@
 <?php
 	require 'SQLGlobal.php';
 
-	if($_SERVER['REQUEST_METHOD']=='GET'){
-		try{
+	if($_SERVER['REQUEST_METHOD']=='GET'){		// en GET SE PONEN EN URL VA= ,pero hace loq pongas aqui >= > //unitynocharcha
+		try{							
 			$precio = $_GET['precio'];                      // obtener parametros GET confiltro
 			//$respuesta = SQLGlobal::query("QUERY");//sin filtro ("No incluir filtros ni '?'")
 			$respuesta = SQLGlobal::selectArrayFiltro(             // confiltro

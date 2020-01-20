@@ -1,4 +1,4 @@
-<?php        // la guia o base de las consultas
+<?php        // la guia o base de las consultas  //cambias los queryfiltros
 	require 'Database.php';
 
 	class SQLGlobal{
