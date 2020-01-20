@@ -1,12 +1,9 @@
 <?php
                 require 'SQLGlobal.php';
-
-
-
-
-                 if($_server['request_method']=='get'){
+                 IF($_SERVER['REQUEST_METHOD']=='GET'){
+                 
                      try{
-                         $respuesta = sqlglobal::selectarray("select * from bd2"); // semodifica esta linea decodigo
+                         $respuesta = SQLGlobal::selectArray("SELECT * FROM bd2"); // semodifica esta linea decodigo
                         // echo json_encode($respuesta);
                          echo json_encode(array(
                              'respuesta'=>'200',
