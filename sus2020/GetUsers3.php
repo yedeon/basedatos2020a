@@ -1,16 +1,24 @@
 <?php
-            //$servername = "WSTIENDA";
-            $servername ="ec2-3-224-165-85.compute-1.amazonaws.com"; //host name adress
-            $username = "kvroxolmlcqfgb"; //user
-            $password = "47bd6afda672b672b41887acbee02ae16bad469fca70c7581d723875974a83c3"; //password
-            $dbname = "d614viiu0ih5q1"; //database
-            //"apikey:fa666d0c-fcda-48b1-aac4-16bdfd437280"
-            //"token autorizacion:"Heroku CLI"  "fa666d0c-fcda-48b1-aac4-16bdfd437280"
+                    //$servername = "WSTIENDA";
+            //$servername ="ec2-3-224-165-85.compute-1.amazonaws.com"; //host name adress
+            //$username = "kvroxolmlcqfgb"; //user
+            //$password = "47bd6afda672b672b41887acbee02ae16bad469fca70c7581d723875974a83c3"; //password
+                    //$password = "apikey:fa666d0c-fcda-48b1-aac4-16bdfd437280";
+            //$dbname = "d614viiu0ih5q1"; //database
+                    //$port="5432";
+                    //port puerto "5432";
+                    //"apikey:fa666d0c-fcda-48b1-aac4-16bdfd437280"
+                    //"token autorizacion:"Heroku CLI"  "fa666d0c-fcda-48b1-aac4-16bdfd437280"
+                    //Servers WSTIENDA
+                    //error_reporting(E_ALL ^ E_DEPRECATED);
+
+                    require 'SQLGlobal.php';
 
             $id=$_POST["id"];
             $descripcion=$_POST["descripcion"];
 
-            $conn = new mysqli($servername, $username, $password, $dbname);
+            //$conn = new mysqli($servername,$username,$password,$dbname);
+            $conn = new pgsql($servername,$username,$password,$dbname);
             if ($conn->connect_error) {
                 die("Connection failed1: " . $conn->connect_error);
                 echo "conectado Error";

@@ -1,6 +1,6 @@
 <?php
-            $servername = "WSTIENDA";
-            //$servername ="ec2-3-224-165-85.compute-1.amazonaws.com";
+            //$servername = "WSTIENDA";
+            $servername ="ec2-3-224-165-85.compute-1.amazonaws.com";
             $username = "kvroxolmlcqfgb";
             $password = "2015aaa";
             $dbname = "d614viiu0ih5q1";
