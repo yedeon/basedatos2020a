@@ -9,7 +9,7 @@
             $descripcion=$datos["descripcion"];
             $precio=$datos["precio"];
             $categoria=$datos["categoria"]; 
-			$respuesta = SQLGlobal::cud(
+			$respuesta = SQLGlobal::cudFiltro(
 				"UPDATE bd2 SET descripcion=?,precio=?,categoria=? where id=?",
 				array($descripcion,$precio,$categoria,$id)
             );//con filtro ("El tamaño del array debe ser igual a la cantidad de los '?'")
