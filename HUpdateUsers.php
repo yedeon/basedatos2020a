@@ -3,7 +3,7 @@
 
 	if($_SERVER['REQUEST_METHOD']=='POST'){
 		try{
-			$datos = json_decode(file_get_contents("php://input"),true);
+			$_Post= json_decode(file_get_contents("php://input"),true);
 
             $id=$_Post["id"]; // obtener parametros GET
             $descripcion=$_Post["descripcion"];
