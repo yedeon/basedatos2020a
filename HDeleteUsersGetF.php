@@ -6,10 +6,10 @@
 			$datos = json_decode(file_get_contents("php://input"),true);
 
             (int)$id = $datos["id"]; // obtener parametros POST
-            //$id = 7;
+            $ids =(int)$id;
 			$respuesta = SQLGlobal::cudFiltro(
                 "DELETE FROM bd2  WHERE id =?",
-				array($id) 
+				array($ids) 
 			);//con filtro ("El tamaño del array debe ser igual a la cantidad de los '?'")
             echo json_encode(array(
                     'respuesta'=>'200',
@@ -25,6 +25,6 @@
                     'error'=>$e->getMessage())
 		
 			);
-		}
-	}
+		    }
+	    }
 ?>
