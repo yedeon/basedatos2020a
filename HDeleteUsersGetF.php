@@ -8,10 +8,10 @@
             (int)$id = $datos["id"]; // obtener parametros POST
             //$ids =11;
 			$respuesta = SQLGlobal::cudFiltro(
-                "DELETE FROM bd2  WHERE id =?",
+                "DELETE FROM bd2  WHERE id =?".$id,
 				array((int)$id) 
             );//con filtro ("El tamaño del array debe ser igual a la cantidad de los '?'")
-            echo($id)
+            echo($id." 1")
             // echo json_encode(array(
             //         'respuesta'=>'200',
             //         'estado' => 'Se Borro ok',
@@ -20,7 +20,7 @@
             //     ))
             ;
             }catch(PDOException $e){
-                echo($id)
+                echo($id." 2")
                 // echo json_encode(array(
                 //     'respuesta'=>'-1',
                 //     'estado' => 'No EXISTE',
