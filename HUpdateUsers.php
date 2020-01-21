@@ -5,12 +5,12 @@
 		try{
 			$datos = json_decode(file_get_contents("php://input"),true);
 
-            $id = $datos["id"]; // obtener parametros GET
-            $descripcion = $datos["descripcion"];
-            $precio = $datos["precio"];
-            $categoria = $datos["categoria"];
+            $id=$_Post["id"]; // obtener parametros GET
+            $descripcion=$_Post["descripcion"];
+            $precio=$_Post["precio"];
+            $categoria=$_Post["categoria"];
 			$respuesta = SQLGlobal::cudFiltro(
-				"UPDATE Producto SET descripcion = ?, precio = ?, categoria = ? WHERE id = ?",
+				"UPDATE bd2 SET descripcion = ?, precio = ?, categoria = ? WHERE id = ?",
 				array($descripcion,$precio,$categoria,$id)
             );//con filtro ("El tamaño del array debe ser igual a la cantidad de los '?'")
             if($respuesta>0){
