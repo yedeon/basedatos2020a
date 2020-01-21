@@ -1,23 +1,29 @@
 <?php
-                require 'SQLGlobal.php';
-                 IF($_SERVER['REQUEST_METHOD']=='GET'){
-                 
-                     try{
-                         $respuesta = SQLGlobal::selectArray("SELECT * FROM bd2"); // semodifica esta linea decodigo
-                        // echo json_encode($respuesta);
-                         echo json_encode(array(
-                             'respuesta'=>'200',
-                             'estado' => 'se obtuvieron los datos correctamente',
-                             'data'=>$respuesta,
-                             'error'=>''
-                         ));
-                     }catch(pdoexception $e){
-                         echo json_encode(array(
-                                 'respuesta'=>'-1',
-                                 'estado' => 'ocurrio un error, intentelo mas tarde',
-                                 'data'=>'',
-                                 'error'=>$e->getmessage())
-                         );
-                     }
-                 }
-            ?>
+	require 'SQLGlobal.php';
+
+	if($_SERVER['REQUEST_METHOD']=='POST'){
+		try{
+			$datos = json_decode(file_get_contents("php://input"),true);
+
+           // (int)$id = $_POST["id"]; // obtener parametros POST
+			$respuesta = SQLGlobal::selectArrayFiltro(
+                "SELECT * FROM bd2 ",
+			//	array((int)$id) 
+			);//con filtro ("El tamaño del array debe ser igual a la cantidad de los '?'")
+            echo json_encode(array(
+                    'respuesta'=>'200',
+                    'estado' => 'Se Filtro ok',
+                    'data'=>$respuesta, //. concatea en php // en +
+                    'error'=>''
+                ));
+            }catch(PDOException $e){
+                echo json_encode(array(
+                    'respuesta'=>'-1',
+                    'estado' => 'No EXISTE',
+                    'data'=>'',
+                    'error'=>$e->getMessage())
+		
+			);
+		}
+	}
+?>
