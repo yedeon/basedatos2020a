@@ -11,22 +11,32 @@
             $categoria = $_POST["categoria"]; 
             //$ids =11;
 			$respuesta = SQLGlobal::cudFiltro(
-                "INSERT INTO bd2  WHERE id =?,?,?,?",
-				array($id,$descripcion,$precio,$categoria) 
-            );//con filtro ("El tamaño del array debe ser igual a la cantidad de los '?'")
-            echo json_encode(array(
-                    'respuesta'=>'200',
-                    'estado' => 'Se Inserto ok',
-                    'data'=>$respuesta, //. concatea en php // en +
-                    'error'=>''
-                ));
+                "INSERT INTO bd2  values (?,?,?,?)",
+				array($id,$descripcion,$precio,$categoria));//con filtro ("El tamaño del array debe ser igual a la cantidad de los '?'")
+                    if($respuesta>0){
+                        echo json_encode(array(
+                            'respuesta'=>'200',
+                            'estado' => 'Se inserto ok',
+                            'data'=>'Nro registros afectados son: '.$respuesta,
+                            'error'=>''
+                        ));
+                    }else{
+                        echo json_encode(array(
+                            'respuesta'=>'100',
+                            'estado' => 'No se registro',
+                            'data'=>'Nro registros afectados son: '.$respuesta,
+                            'error'=>''
+                        ));
+                    }
+            
             }catch(PDOException $e){
-                echo json_encode(array(
-                    'respuesta'=>'-1',
-                    'estado' => 'No se Inserto',
-                    'data'=>'',
-                    'error'=>$e->getMessage()
-                ));
-		    }
-	    }
+                echo json_encode(
+                    array(
+                        'respuesta'=>'-1',
+                        'estado' => 'Ocurrio un error, intentelo mas tarde',
+                        'data'=>'',
+                        'error'=>$e->getMessage())
+                );
+		}
+	}
 ?>
