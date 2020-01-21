@@ -5,8 +5,8 @@
 		try{
 			$datos= json_decode(file_get_contents("php://input"),true);
 
-            (int)$id=$datos["id"]; // obtener parametros GET
-            $descripcion=$datos["descripcion"];
+            (int)$id=$_POST["id"]; // obtener parametros GET
+            $descripcion=$_Post["descripcion"];
             $precio=$datos["precio"];
             $categoria=$datos["categoria"]; 
 			$respuesta = SQLGlobal::cudFiltro(
@@ -20,7 +20,7 @@
                 //     'data'=>'Numero de filas afectadas: '.$respuesta,
                 //     'error'=>''
                 // ));
-                echo("1 ".$id." ".$descripcion." ".$precio." ".$categoria);
+                echo("a ".$id." ".$descripcion." ".$precio." ".$categoria);
             }else{
                 // echo json_encode(array(
                 //     'respuesta'=>'100',
@@ -28,7 +28,7 @@
                 //     'data'=>'Numero de filas afectadas: '.$respuesta,
                 //     'error'=>''
                 // ));
-                echo("2 ".$id." ".$descripcion." ".$precio." ".$categoria);
+                echo("b ".$id." ".$descripcion." ".$precio." ".$categoria);
             }
 		}catch(PDOException $e){
 			// echo json_encode(
@@ -38,7 +38,7 @@
 			// 		'data'=>'',
 			// 		'error'=>$e->getMessage())
             // );
-            echo("3 ".$id." ".$descripcion." ".$precio." ".$categoria);
+            echo("c ".$id." ".$descripcion." ".$precio." ".$categoria);
 		}
 	}
 
