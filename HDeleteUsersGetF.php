@@ -9,7 +9,7 @@
             //$ids =11;
 			$respuesta = SQLGlobal::cudFiltro(
                 "DELETE FROM bd2  WHERE id =?",
-				array($ids) 
+				array((int)$id) 
             );//con filtro ("El tamaño del array debe ser igual a la cantidad de los '?'")
             echo($id)
             // echo json_encode(array(
