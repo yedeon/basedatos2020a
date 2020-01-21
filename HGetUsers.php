@@ -1,12 +1,12 @@
 <?php
 	require 'SQLGlobal.php';
 
-	if($_SERVER['REQUEST_METHOD']=='GET'){
+	if($_SERVER['REQUEST_METHOD']=='POST'){
 		try{
 			$datos = json_decode(file_get_contents("php://input"),true);
 
            // (int)$id = $_POST["id"]; // obtener parametros POST
-			$respuesta = SQLGlobal::selectArrayFiltro(
+			$respuesta = SQLGlobal::selectArray(
                 "SELECT * FROM bd2 ",
 				array((int)$id) 
 			);//con filtro ("El tamaño del array debe ser igual a la cantidad de los '?'")
