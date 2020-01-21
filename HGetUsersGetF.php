@@ -3,9 +3,9 @@
 
 	if($_SERVER['REQUEST_METHOD']=='GET'){
 		try{
-			//$datos = json_decode(file_get_contents("php://input"),true);
+			$datos = json_decode(file_get_contents("php://input"),true);
 
-           // $id = $$_GET["id"]; // obtener parametros POST
+            $id = $$_GET["id"]; // obtener parametros POST
 			$respuesta = SQLGlobal::selectArrayFiltro(
                 "SELECT * FROM bd2  WHERE id =$id",
 				array($id) 
