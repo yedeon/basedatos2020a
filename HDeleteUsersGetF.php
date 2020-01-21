@@ -5,7 +5,7 @@
 		try{
 			$datos = json_decode(file_get_contents("php://input"),true);
 
-            $id = ((int)($datos["id"]))*1; // obtener parametros POST
+            (int)$id = $datos["id"]; // obtener parametros POST
             //$id = 7;
 			$respuesta = SQLGlobal::cudFiltro(
                 "DELETE FROM bd2  WHERE id =?",
