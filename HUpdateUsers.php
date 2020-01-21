@@ -3,12 +3,12 @@
 
 	if($_SERVER['REQUEST_METHOD']=='POST'){
 		try{
-			$datos= json_decode(file_get_contents("php://input"),true);
+			$_POST= json_decode(file_get_contents("php://input"),true);
 
             (int)$id=$_POST["id"]; // obtener parametros GET
-            $descripcion=$_Post["descripcion"];
-            $precio=$datos["precio"];
-            $categoria=$datos["categoria"]; 
+            $descripcion=$_POST["descripcion"];
+            $precio=$_POST["precio"];
+            $categoria=$_POST["categoria"]; 
 			$respuesta = SQLGlobal::cudFiltro(
 				"UPDATE bd2 SET descripcion=?,precio=?,categoria=? WHERE id=?",
 				array($id,$descripcion,$precio,$categoria)
