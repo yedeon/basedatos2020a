@@ -5,7 +5,7 @@
 		try{
 			$datos = json_decode(file_get_contents("php://input"),true);
 
-            (int)$id = $_POST["id"]; // obtener parametros POST
+            $id = $_POST["id"]; // obtener parametros POST
 			$respuesta = SQLGlobal::selectArrayFiltro(
                 "SELECT * FROM bd3  WHERE descripcion =?",
 				array((int)$id) 
