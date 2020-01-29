@@ -15,14 +15,14 @@
                     'respuesta'=>'200',
                     'estado' => 'Se Encontro ok',
                     'data'=>'Nro registros afectados son: '.$respuesta, //. concatea en php // en +
-                    'error'=>''
+                    'error'=>'1'
                 ));
             }else{
                 echo json_encode(array(
                     'respuesta'=>'100',
                     'estado' => 'No EXISTE',
                     'data'=>'Nro registros afectados son: '.$respuesta,
-                    'error'=>''
+                    'error'=>'2'
                 ));
             }
             }catch(PDOException $e){
@@ -30,7 +30,9 @@
                     'respuesta'=>'-1',
                     'estado' => 'Rrrrosote ',
                     'data'=>'',
-                    'error'=>$e->getMessage())
+                    //'error'=>$e->getMessage()
+                    'error'=>'3'
+                    )
 		
 			);
 		}
