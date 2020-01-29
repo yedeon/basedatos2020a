@@ -7,7 +7,7 @@
 
             $descripcion = $_POST["descripcion"]; // obtener parametros POST
 			$respuesta = SQLGlobal::selectArrayFiltro(
-                "SELECT * FROM bd3  WHERE LOWER(descripcion) =Lower(?)",
+                "SELECT * FROM bd3  WHERE LOWER(descripcion) like Lower(?)",
 				array($descripcion.'%') 
 			);//con filtro ("El tamaño del array debe ser igual a la cantidad de los '?'")
             if($respuesta>0){
