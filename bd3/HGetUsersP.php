@@ -10,7 +10,7 @@
                 "SELECT * FROM bd3  WHERE descripcion =?",
 				array($descripcion) 
 			);//con filtro ("El tamaño del array debe ser igual a la cantidad de los '?'")
-            if($respuesta=1){
+            if($respuesta==1){
                 echo json_encode(array(
                     'respuesta'=>'200',
                     'estado' => 'Se Encontro ok',
