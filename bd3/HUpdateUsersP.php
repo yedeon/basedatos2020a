@@ -12,7 +12,7 @@
             
             $descripcion=$_POST["descripcion"];
 			$respuesta = SQLGlobal::cudFiltro(
-				"UPDATE bd2 SET id=?,precio=?,categoria=? WHERE descripcion=?",
+				"UPDATE bd3 SET id=?,precio=?,categoria=? WHERE descripcion=?",
 				array($id,$precio,$categoria,$descripcion)//renglones descen y dercha mismo orden de $xx
             );//con filtro ("El tamaño del array debe ser igual a la cantidad de los '?'")
             if($respuesta>0){
