@@ -1,7 +1,7 @@
 <?php
 	require 'SQLGlobal.php';
 
-	if($_SERVER['REQUEST_METHOD']=='POST'){
+	if($_SERVER['REQUEST_METHOD']=='Get'){
 		try{
 			$datos = json_decode(file_get_contents("php://input"),true);
 
