@@ -5,37 +5,24 @@
 		try{
 			$datos = json_decode(file_get_contents("php://input"),true);
 
-            $descripcion = $datos["descripcion"]; // obtener parametros POST
+            $descripcion = $_POST["descripcion"]; // obtener parametros POST
 			//$respuesta = SQLGlobal::cudFiltro("DELETE FROM bd3 WHERE descripcion=?",
 			$respuesta = SQLGlobal::cudFiltro("DELETE FROM bd3  WHERE descripcion = ?",
 				array($descripcion) 
 			);//con filtro ("El tamaño del array debe ser igual a la cantidad de los '?'")
-            if($respuesta>0){
-                echo json_encode(array(
-                    'respuesta'=>'200',
-                    'estado' => 'Se Elimino ok',
-                    'data'=>'Nro registros afectados son: '.$respuesta, //. concatea en php // en +
-                    'error'=>''
-                ));
-            }else{
-                echo json_encode(array(
-                    'respuesta'=>'100',
-                    'estado' => 'No EXISTE',
-                    'data'=>'Nro registros afectados son: '.$respuesta,
-                    'error'=>''
-                ));
-            }
-            
+            echo json_encode(array(
+				'respuesta'=>'200',
+				'estado' => 'Se Borro ok',
+				'data'=>$respuesta, //. concatea en php // en +
+				'error'=>''
+			));
 		}catch(PDOException $e){
-			echo json_encode(
-				array(
-					'respuesta'=>'-1',
-					'estado' => 'Ocurrio un error, intentelo mas tarde',
-					'data'=>'',
-					'error'=>$e->getMessage())
-			);
+			echo json_encode(array(
+				'respuesta'=>'-1',
+				'estado' => 'No EXISTE',
+				'data'=>'',
+				'error'=>$e->getMessage()
+			));
 		}
 	}
 ?>
-
-<?php
