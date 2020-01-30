@@ -5,9 +5,9 @@
 		try{
 			$datos = json_decode(file_get_contents("php://input"),true);
 
-            (int)$id = $_POST["id"]; // obtener parametros POST
+            $id = $_POST["id"]; // obtener parametros POST
             $descripcion = $_POST["descripcion"]; 
-            (int)$precio = $_POST["precio"]; 
+            $precio = $_POST["precio"]; 
             $categoria = $_POST["categoria"]; 
             //$ids =11;
 			$respuesta = SQLGlobal::cudFiltro(
