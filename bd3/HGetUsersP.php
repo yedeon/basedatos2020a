@@ -7,9 +7,9 @@
 
             $descripcion = $_POST["descripcion"]; // obtener parametros POST
 			$respuesta = SQLGlobal::selectArrayFiltro(
-                "SELECT * FROM bd3 WHERE descripcion = ? ",
+                "SELECT * FROM bd3 ",//WHERE descripcion = ? ",
                 //"select * from bd3 where lower(descripcion) LIKE lower('juan');"
-				array("'".$descripcion."'") 
+				//array("'".$descripcion."'") 
 			);//con filtro ("El tamaño del array debe ser igual a la cantidad de los '?'")
             if($respuesta>0){
                 echo json_encode(array(
