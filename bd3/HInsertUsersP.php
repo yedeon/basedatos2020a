@@ -5,7 +5,7 @@
 		try{
 			$datos = json_decode(file_get_contents("php://input"),true);
 
-           $id = $_POST["id"]; // obtener parametros POST
+            $id = $_POST[""]; // obtener parametros POST
             $descripcion = $_POST["descripcion"]; 
             $precio = $_POST["precio"]; 
             $categoria = $_POST["categoria"]; 
