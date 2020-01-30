@@ -9,9 +9,9 @@
             $descripcion=$_POST["descripcion"];
             $precio=$_POST["precio"];
             $categoria=$_POST["categoria"]; 
-            (int)$id=$_POST["id"]; // obtener parametros GET
+            $id=$_POST["id"]; // obtener parametros GET
 			$respuesta = SQLGlobal::cudFiltro(
-				"UPDATE bd3 SET descripcion=?,precio=?,categoria=? WHERE id=?",
+				"UPDATE bd2 SET precio=?,categoria=?,id=? WHERE descripcion=?",
 				array($descripcion,$precio,$categoria,$id)//renglones descen y dercha mismo orden de $xx
             );//con filtro ("El tamaño del array debe ser igual a la cantidad de los '?'")
             if($respuesta>0){
