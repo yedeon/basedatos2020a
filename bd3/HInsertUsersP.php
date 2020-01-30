@@ -5,14 +5,14 @@
 		try{
 			$datos = json_decode(file_get_contents("php://input"),true);
 
-            $id = $_POST["id"]; // obtener parametros POST
+           // $id = $_POST["id"]; // obtener parametros POST
             $descripcion = $_POST["descripcion"]; 
             $precio = $_POST["precio"]; 
             $categoria = $_POST["categoria"]; 
             //$ids =11;
 			$respuesta = SQLGlobal::cudFiltro(
-                "INSERT INTO bd3  values (?,?,?,?)",
-				array($id,$descripcion,$precio,$categoria));//con filtro ("El tamaño del array debe ser igual a la cantidad de los '?'")
+                "INSERT INTO bd3  values (?,?,?)",
+				array($descripcion,$precio,$categoria));//con filtro ("El tamaño del array debe ser igual a la cantidad de los '?'")
                     if($respuesta>0){
                         echo json_encode(array(
                             'respuesta'=>'200',
