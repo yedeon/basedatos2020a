@@ -9,7 +9,7 @@
             $descripcion = $_POST["descripcion"]; 
             $precio = $_POST["precio"]; 
             $categoria = $_POST["categoria"]; 
-            if($id==null){
+            if( is_null($id)){
                 $respuesta = SQLGlobal::cudFiltro("INSERT INTO bd3 values (?,?,?)",
                 array($descripcion,$precio,$categoria));
             }else{
