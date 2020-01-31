@@ -9,8 +9,14 @@
             $descripcion = $_POST["descripcion"]; 
             $precio = $_POST["precio"]; 
             $categoria = $_POST["categoria"]; 
-			$respuesta = SQLGlobal::cudFiltro("INSERT INTO bd3 values (?,?,?,?)",
-				array($id,$descripcion,$precio,$categoria));//con filtro ("El tamaño del array debe ser igual a la cantidad de los '?'")
+            if($id=null){
+                $respuesta = SQLGlobal::cudFiltro("INSERT INTO bd3 values (?,?,?)",
+                array($descripcion,$precio,$categoria));
+            }else{
+                $respuesta = SQLGlobal::cudFiltro("INSERT INTO bd3 values (?,?,?,?)",
+                array($id,$descripcion,$precio,$categoria));
+            }
+				
                     if($respuesta>0){
                         echo json_encode(array(
                             'respuesta'=>'200',
