@@ -8,10 +8,12 @@
             $id = $_POST["id"]; // obtener parametros POST
             
             if( is_null($id)){
+                $id=30;
                 $descripcion = $_POST["descripcion"]; 
                 $precio = $_POST["precio"]; 
                 $categoria = $_POST["categoria"]; 
-                $respuesta = SQLGlobal::cudFiltro("INSERT INTO bd3 ('descripcion','precio','categoria') values ($descripcion,$precio,$categoria)");
+                $respuesta = SQLGlobal::cudFiltro("INSERT INTO bd3 values (?,?,?,?)",
+                array($id,$descripcion,$precio,$categoria));
             }else{
                 $id = $_POST["id"];
                 $descripcion = $_POST["descripcion"]; 
