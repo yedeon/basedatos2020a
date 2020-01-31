@@ -6,14 +6,18 @@
 			$datos = json_decode(file_get_contents("php://input"),true);
 
             $id = $_POST["id"]; // obtener parametros POST
-            $id2 = 5;
-            $descripcion = $_POST["descripcion"]; 
-            $precio = $_POST["precio"]; 
-            $categoria = $_POST["categoria"]; 
+            
             if( is_null($id)){
-                $respuesta = SQLGlobal::cudFiltro("INSERT INTO bd3 values ('descripcion','precio','categoria')",
+                $descripcion = $_POST["descripcion"]; 
+                $precio = $_POST["precio"]; 
+                $categoria = $_POST["categoria"]; 
+                $respuesta = SQLGlobal::cudFiltro("INSERT INTO bd3 values (?,?,?)",
                 array($descripcion,$precio,$categoria));
             }else{
+                $id = $_POST["id"];
+                $descripcion = $_POST["descripcion"]; 
+                $precio = $_POST["precio"]; 
+                $categoria = $_POST["categoria"]; 
                 $respuesta = SQLGlobal::cudFiltro("INSERT INTO bd3 values (?,?,?,?)",
                 array($id,$descripcion,$precio,$categoria));
             }
