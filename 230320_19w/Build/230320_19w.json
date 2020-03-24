@@ -1,0 +1,17 @@
+{
+"companyName": "DefaultCompany",
+"productName": "230320_2019",
+"productVersion": "0.1",
+"dataUrl": "230320_19w.data.unityweb",
+"wasmCodeUrl": "230320_19w.wasm.code.unityweb",
+"wasmFrameworkUrl": "230320_19w.wasm.framework.unityweb",
+"graphicsAPI": ["WebGL 2.0","WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"backgroundUrl": "230320_19w.jpg",
+"splashScreenStyle": "Dark",
+"backgroundColor": "#FFFFFF",
+"cacheControl": {"default": "must-revalidate"},
+"developmentBuild": false,
+"multithreading": false,
+"unityVersion": "2019.2.17f1"
+}
