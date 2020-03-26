@@ -1,6 +1,6 @@
 {
 "companyName": "DefaultCompany",
-"productName": "230320_2019",
+"productName": "240320.2019.36",
 "productVersion": "0.1",
 "dataUrl": "230320_19w.data.unityweb",
 "wasmCodeUrl": "230320_19w.wasm.code.unityweb",
@@ -12,5 +12,5 @@
 "cacheControl": {"default": "must-revalidate"},
 "developmentBuild": false,
 "multithreading": false,
-"unityVersion": "2019.2.17f1"
+"unityVersion": "2019.3.6f1"
 }
