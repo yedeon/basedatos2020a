@@ -1,7 +1,7 @@
 <?php        // la guia o base de las consultas  //cambias los queryfiltros
 	require 'Database.php';
 
-	class SQLGlobal{
+	class SQLGlobal{   // get pones dato en url post no se ve
 		function _construct(){
 		}
 

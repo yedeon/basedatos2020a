@@ -3,7 +3,7 @@
 
             if($_SERVER['REQUEST_METHOD']=='GET'){
                 try{
-                    $respuesta = SQLGlobal::selectArray("SELECT count(*)  FROM bd4 ");
+                    $respuesta = SQLGlobal::selectArray("SELECT count(*)  FROM bd4 WHERE nroemp='4' ");
                     echo json_encode(array(
                             'respuesta'=>'200',
                             'estado' => 'Se Filtro ok',
