@@ -7,7 +7,7 @@
                     $datos = json_decode(file_get_contents("php://input"),true);
 
                     $nroemp = $_POST["nroemp"]; // obtener parametros POST
-                    $respuesta = SQLGlobal::selectObject(
+                    $respuesta = SQLGlobal::selectArrayFiltro(
                         "SELECT * FROM bd4  WHERE nroemp =?",
                         array($nroemp) 
                     );//con filtro ("El tamaño del array debe ser igual a la cantidad de los '?'")
