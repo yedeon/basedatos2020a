@@ -8,7 +8,7 @@
 			$nroemp = $datos[4]; // obtener parametros GET
 			//$respuesta = SQLGlobal::query("QUERY");//sin filtro ("No incluir filtros ni '?'")
 			$respuesta = SQLGlobal::selectObject(
-				"QUERY WHERE nroemp=4",
+				"QUERY WHERE id = ? AND nroemp="&4&'"',
 				array("id","nroemp")
 			);//con filtro ("El tamaño del array debe ser igual a la cantidad de los '?'")
 			echo json_encode(array(
